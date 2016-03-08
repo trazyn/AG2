@@ -4,6 +4,9 @@
 export LC_CTYPE=C
 export LANG=C
 
+set DB_DEV_USER='USERNAME'
+set DB_DEV_PASS='PASSWD'
+
 mysql -u ${DB_DEV_USER} -p${DB_DEV_PASS} -e "drop database if exists \`aresguo\`; create database \`aresguo\` CHARACTER SET \`utf8\` COLLATE \`utf8_bin\`; grant all on *.* to ${DB_DEV_USER}@localhost identified by \"${DB_DEV_PASS}\"; grant all privileges on \`aresguo\`.* to ${DB_DEV_USER}@localhost;"
 
 # CREATE USER TABLE
