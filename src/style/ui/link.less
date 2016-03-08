@@ -1,0 +1,38 @@
+
+@import (less) "./color.less";
+
+.md-link {
+    position: relative;
+    cursor: pointer;
+    transition: .2s;
+
+    &,
+    &:hover,
+    &:active,
+    &:visited { text-decoration: none; }
+
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        display: block;
+        width: 0;
+        height: 1px;
+        margin: auto;
+        background-color: @coral;
+        transform: translateX(-50%);
+        transition: width .3s ease, background-color .3s ease;
+    }
+
+    &:hover,
+    &.active {
+        color: #fff;
+        &:after { width: 100%; }
+    }
+
+    &.active:hover {
+        color: #fff;
+        &:after { width: 75%; }
+    }
+}

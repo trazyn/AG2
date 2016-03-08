@@ -1,0 +1,166 @@
+@import (less) "./color.less";
+
+.theme( @bg: rgba(0,0,0,.8), @fg: white ) {
+
+    .md-modal-body {
+        color: @fg;
+        background-color: @bg;
+    }
+}
+
+.md-toast {
+    padding: 0;
+    color: white;
+    background: none;
+    > div {
+        box-shadow: 0 3px 10px rgba(0, 0, 0, .23), 0 3px 10px rgba(0, 0, 0, .16);
+    }
+
+    &.md-toast-topleft {
+        left: 35px;
+        top: 15px;
+        transform: none;
+    }
+
+    &.md-toast-topright {
+        right: 35px;
+        top: 15px;
+        left: auto;
+        transform: none;
+    }
+
+    &.md-toast-bottomleft {
+        top: auto;
+        left: 35px;
+        bottom: 15px;
+        transform: none;
+    }
+
+    &.md-toast-bottomright {
+        top: auto;
+        left: auto;
+        right: 35px;
+        bottom: 15px;
+        transform: none;
+    }
+
+    .md-modal-body {
+        height: 48px;
+        min-width: 300px;
+        line-height: 48px;
+        padding: 0 24px;
+        color: #fff;
+        background-color: rgb(50, 50, 50);
+    }
+}
+
+.md-toast-message {
+    font-size: 13px;
+    word-wrap: break-word;
+}
+
+.md-toast-message,
+.md-toast-close {
+    display: inline-block;
+    margin: 0;
+}
+
+.md-toast-close {
+    right: 12px;
+    float: right;
+    margin-left: 10px;
+    font-size: 14px;
+    color: #ff4081;
+    cursor: pointer;
+}
+
+.md-toast-grape {
+    .theme(@grape);
+}
+
+.md-toast-bittersweet {
+    .theme(@bittersweet);
+}
+
+.md-toast-sunflower {
+    .theme(@sunflower);
+}
+
+.md-toast-grass {
+    .theme(@grass);
+}
+
+.md-toast-mint {
+    .theme(@mint);
+}
+
+.md-toast-aqua {
+    .theme(@aqua);
+}
+
+.md-toast-blueJeans {
+    .theme(@blueJeans);
+}
+
+.md-toast-lavender {
+    .theme(@lavender);
+}
+
+.md-toast-pinkRose {
+    .theme(@pinkRose);
+}
+
+.md-toast-lightGray {
+    .theme(@lightGray, #7a7a7a);
+}
+
+.md-toast-mediumGray {
+    .theme(@mediumGray, #333);
+}
+
+.md-toast-darkGray {
+    .theme(@darkGray);
+}
+
+.md-toast-success {
+    .theme(@success);
+}
+
+.md-toast-danger {
+    .theme(@error);
+}
+
+.md-toast-warning {
+    .theme(@warn);
+}
+
+.md-toast-info {
+    .theme(@info);
+}
+
+.md-toast-warning,
+.md-toast-danger,
+.md-toast-grape,
+.md-toast-bittersweet,
+.md-toast-pinkRose {
+    .md-toast-close {
+        color: #fff;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+
+    .md-toast .md-modal-body {
+        height: 32px;
+        min-width: 240px;
+        line-height: 32px;
+        font-size: 12px;
+        padding: 0 18px;
+
+        .md-toast-message,
+        .md-toast-close {
+            font-size: 12px;
+        }
+    }
+}
+

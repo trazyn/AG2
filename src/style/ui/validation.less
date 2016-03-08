@@ -1,0 +1,44 @@
+
+@import (less) "color.less";
+
+.md-validation {
+    .md-text.md-error { border-color: @error; }
+    .md-error:focus { box-shadow: none; }
+}
+
+.md-validation-message {
+    display: block;
+    padding: 2px 10px;
+    font-family: initial;
+    font-size: 14px;
+    color: white;
+    line-height: 24px;
+    background-color: @error;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999;
+    transition: .2s;
+
+    > p {
+        margin: 0;
+        line-height: 32px;
+        height: 32px;
+        font-size: 12px;
+        padding: 0 10px;
+    }
+
+    &.md-error-show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY( -20px );
+    }
+
+    &:after {
+        position: absolute;
+        left: 18px;
+        content: "";
+        border-style: solid;
+        border-width: 8px;
+        border-color: @error rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+    }
+}

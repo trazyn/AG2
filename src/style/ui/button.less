@@ -1,0 +1,212 @@
+
+@import (less) "color.less";
+
+.button-shadow(@rgba: rgba(0,0,0,0.2) ) { box-shadow: 0 10px 20px @rgba; }
+
+.button-raised() {
+    &.md-btn-raised {
+        box-shadow: 0 3px 10px rgba(0,0,0,.23),0 3px 10px rgba(0,0,0,.16);
+        &:hover {
+            .button-shadow();
+        }
+    }
+}
+
+.button-flat( @color ) {
+    &.md-btn-flat {
+        background: transparent;
+        color: @color;
+        &:not(.disabled):not([disabled]):hover {
+            background-color: #efefef;
+            box-shadow: none;
+        }
+    }
+}
+
+.button-outline( @color: rgba(255,255,255,.8) ) {
+    &.md-btn-outline {
+        border: 1px solid @color;
+        background: none;
+        color: @color;
+        background-color: none;
+        &:not(.disabled):not([disabled]):hover {
+            background-color: @color;
+            color: #fff;
+            .button-shadow();
+        }
+    }
+}
+
+.button-variation( @color ) {
+    .button-raised();
+    .button-flat( @color );
+    .button-outline( @color );
+}
+
+.md-btn {
+    position: relative;
+    display: inline-block;
+    height: 32px;
+    border: none;
+    padding: 0 30px;
+    vertical-align: middle;
+    font-size: 14px;
+    color: rgba(255,255,255,.84);
+    line-height: 32px;
+    text-decoration: none;
+    background: #ddd;
+    border-radius: 1px;
+    touch-action: manipulation;
+    cursor: pointer;
+    outline: 0;
+    white-space: nowrap;
+    transition: .2s;
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        cursor: not-allowed;
+        opacity: .65;
+        box-shadow: none !important;
+        pointer-events: none !important;
+    }
+}
+
+.md-btn {
+    &,
+    &-default {
+        &:hover {
+            .button-shadow();
+        }
+        .button-variation( rgba(0,0,0,.75) );
+    }
+
+    &-primary {
+        color: rgba(255,255,255,.84);
+        background-color: @primary;
+        .button-variation( @primary );
+    }
+
+    &-success {
+        color: rgba(255,255,255,.84);
+        background-color: @success;
+        .button-variation( @success );
+    }
+
+    &-info {
+        color: rgba(255,255,255,.84);
+        background-color: @info;
+        .button-variation( @info );
+    }
+
+    &-warning {
+        color: rgba(255,255,255,.84);
+        background-color: @warn;
+        .button-variation( @warn );
+    }
+
+    &-danger {
+        color: rgba(255,255,255,.84);
+        background-color: @error;
+        .button-variation( @error );
+    }
+
+    &-grape { background-color: @grape; }
+    &-bittersweet { background-color: @bittersweet; }
+    &-sunflower { background-color: @sunflower; }
+    &-grass { background-color: @grass; }
+    &-mint { background-color: @mint; }
+    &-aqua { background-color: @aqua; }
+    &-blueJeans { background-color: @blueJeans; }
+    &-lavender { background-color: @lavender; }
+    &-pinkRose { background-color: @pinkRose; }
+
+    &-lightGray {
+        color: @darkGray;
+        background-color: @lightGray;
+    }
+
+    &-mediumGray {
+        color: @darkGray;
+        background-color: @mediumGray;
+    }
+
+    &-darkGray {
+        color: @lightGray;
+        background-color: @darkGray;
+    }
+
+    &-coral {
+        color: rgba(255,255,255,.84);
+        background-color: @coral;
+        .button-variation( @coral );
+    }
+
+    &-icon {
+
+        display: inline-block;
+        width: 56px;
+        height: 56px;
+        padding: 0;
+        border-radius: 56px;
+        line-height: 56px;
+        color: white;
+        cursor: pointer;
+        transition: .2s;
+        &:hover {
+            box-shadow: 0 1px 24px rgba(0,0,0,.24);
+        }
+    }
+
+    &-file {
+        display: inline-block;
+        padding: 0;
+        transition: .2s;
+
+        label {
+            display: inline-block;
+            margin: 0;
+            padding: 0 20px;
+            background: 0 0;
+            cursor: pointer;
+            &:hover {
+                box-shadow: none;
+            }
+        }
+        input {
+            &[type="file"] {
+                display: none;
+                visibility: hidden;
+                opacity: 0;
+            }
+        }
+    }
+
+    .md-icon,
+    [class^=md-icon-] {
+        transform: translateY(-1px);
+        display: inline-block;
+    }
+
+    &.btn-lg,
+    &.btn-sm,
+    &.btn-xs { height: auto; }
+
+    &.btn-lg {
+        padding: 10px 16px;
+        font-size: 18px;
+        line-height: 1.3333333;
+    }
+
+    &.btn-sm {
+        padding: 5px 10px;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    &.btn-xs {
+        padding: 1px 5px;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+}

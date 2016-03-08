@@ -1,0 +1,54 @@
+<div id="ag-login">
+
+    <div class="wrapper row">
+
+        <div class="sign-in">
+
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <h1>Sign In</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="md-form-group">
+                        <input class="md-field" id="login-name" name="username" type="text" validators="[ { minLength: 4 } ]">
+                        <label class="md-label" for="login-name">Name</label>
+                        <small> Invalid Name! </small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="md-form-group">
+                        <input class="md-field" id="login-password" name="password" type="password" validators="[ { minLength: 5 } ]">
+                        <label class="md-label" for="login-password">Password</label>
+                        <small> Invalid Password! </small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <button class="md-btn md-btn-primary" name="login">Login</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero">
+            <div class="logo-wrapper">
+                <div class="square">
+                    <img class="logo" src="../../images/logo.png" alt="">
+                </div>
+            </div>
+
+            <div class="note">
+                - Photo <a href="https://unsplash.com/photos/YD1uvthZwg4" class="md-link active">Island</a> by <a class="md-link active" href="https://unsplash.com/jonottosson">Jon Ottosson</a>
+            </div>
+        </div>
+    </div>
+
+    <script type="amd" src="src/modules/login/index.js"></script>
+</div>

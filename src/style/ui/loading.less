@@ -1,0 +1,27 @@
+
+
+.md-loading {
+    position: relative;
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        height: 100%;
+        width: 100%;
+        background: url(../../images/loading.gif) no-repeat;
+        background-position: center;
+        background-color: #fff;
+        visibility: hidden;
+        opacity: 0;
+        transition: .2s;
+        z-index: 99;
+    }
+
+    &.md-loading-show:after {
+        visibility: visible;
+        opacity: 1;
+    }
+}

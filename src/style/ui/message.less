@@ -1,0 +1,76 @@
+
+@import (reference) "color.less";
+
+.md-message {
+
+	#variation( @color, @content ) {
+
+		background-color: lighten( @color, 10% );
+		i.md-icon:after { content: @content; }
+	}
+
+	position: relative;
+	display: table;
+	height: 100px;
+	width: 500px;
+	margin: 10px 0 20px 0;
+	vertical-align: middle;
+	color: white;
+	transition: .2s;
+
+	> div.md-message-flag {
+		display: table-cell;
+		width: 60px;
+		padding: 30px;
+		vertical-align: middle;
+		text-align: center;
+		background-color: rgba(0, 0, 0, 0.25);
+		transform: translateX(-1px);
+
+		> i.md-icon {
+			width: 20px;
+			font-size: 20px;
+		}
+	}
+
+	> div.md-message-content {
+		display: table-cell;
+		padding: 30px 20px 30px 10px;
+		vertical-align: middle;
+		text-shadow: 0 0 40px #fff;
+		color: white;
+
+		> p { margin-bottom: 0; }
+	}
+
+	&.md-message-success { #variation( @success, "\e635" ); }
+	&.md-message-danger { #variation( @error, "\e61e" ); }
+	&.md-message-info { #variation( @info, "\e64e" ); }
+	&.md-message-warning { #variation( @warn, "\e6be" ); }
+
+	/** Patch tooltip */
+	&.md-tooltip {
+		&:before {
+			bottom: 115%;
+			left: 15px;
+		}
+
+		&:after {
+			bottom: 115%;
+			left: 0px;
+		}
+	}
+}
+
+.md-modal.md-confirm {
+
+    > div { border-radius: 2px; }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    button { margin-right: 10px; }
+
+    .md-modal-body { min-width: 400px; }
+}

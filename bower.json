@@ -1,0 +1,35 @@
+{
+  "name": "AG2",
+  "version": "0.1.0",
+  "authors": [
+    "trazyn <tn.razy@gmail.com>"
+  ],
+  "description": "AG AresGuo",
+  "main": "src/app.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "jquery-mousewheel": "~3.1.13",
+    "jquery": "~2.1.4",
+    "requirejs": "~2.1.20",
+    "micromarkdown.js": "SimonWaldherr/micromarkdown.js#~0.3.0",
+    "markdown": "~0.5.0",
+    "clipboard": "~1.5.5",
+    "uploadify": "~3.2.1",
+    "JavaScript-MD5": "blueimp/JavaScript-MD5#~2.1.0",
+    "dateutil": "trazyn/dateutil"
+  },
+  "moduleType": [],
+  "homepage": "",
+  "devDependencies": {
+    "video.js": "~5.2.1",
+    "path.js": "trazyn/path.js"
+  }
+}

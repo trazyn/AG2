@@ -1,0 +1,86 @@
+
+@import (less) "ui/color.less";
+
+#ag-login {
+    width: 100%;
+    height: 100%;
+    background: @google;
+    font-family: "HelveticaNeue-UltraLight";
+    background: url(../../images/login-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+
+    button {
+        width: 140px;
+        height: auto;
+        padding: 4px 30px;
+        margin-top: 24px;
+        font-size: 16px;
+    }
+
+    h1 { margin-bottom: 30px; }
+
+    img {
+        width: 110px;
+        height: 110px;
+        margin: 14px;
+    }
+
+    .wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 900px;
+        height: 440px;
+        margin: -220px 0 0 -450px;
+        background: rgba(172,146,236,.7);
+        border-radius: 2px;
+    }
+
+    .sign-in {
+        width: 450px;
+        height: 520px;
+        padding-top: 100px;
+        background: #fff;
+        position: absolute;
+        top: 50%;
+        margin-top: -260px;
+        letter-spacing: 1px;
+        border-radius: 2px;
+        box-shadow: 0 0px 60px rgba(0,0,0,.3);
+    }
+
+    .hero {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 450px;
+        height: 100%;
+    }
+
+    .logo-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border: 2px solid #000;
+        transform: translateY(-60%) translateX(-50%) rotate(45deg);
+    }
+
+    .square {
+        margin: 8px;
+        border: 1px solid #000;
+    }
+
+    .note {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 20px 24px;
+        text-align: right;
+        color: #fff;
+        letter-spacing: 1px;
+    }
+
+    .md-label { color: darken(#e6e6e6,30%); }
+}

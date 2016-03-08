@@ -1,0 +1,219 @@
+
+modal {
+    display: none;
+}
+
+/** Mixins */
+.modal-show() {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-blank() {
+    .show();
+    background: transparent;
+}
+
+.animation-init() {
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.md-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: auto;
+    min-width: 240px;
+    max-width: 80%;
+    max-height: 80%;
+    backface-visibility: hidden;
+    z-index: 100;
+    transform: translateX(-50%) translateY(-50%);
+
+    .md-progress .md-progress-spinner {
+        top: 54px;
+        right: 14px;
+    }
+}
+
+.md-modal > div {
+    position: relative;
+    margin: 0 auto;
+    background: #fff;
+    overflow: hidden;
+}
+
+.md-modal-head {
+    margin: 0;
+    padding: 16px;
+    padding-left: 24px;
+    font-size: 17px;
+    font-weight: 300;
+    text-align: left;
+    color: #fff;
+    background: #01a1df;
+    opacity: 1;
+}
+
+.md-modal-content {
+    max-height: 480px;
+    padding: 24px;
+    overflow: auto;
+}
+
+.md-modal-body {
+    position: relative;
+    overflow: hidden;
+}
+
+.md-modal-action {
+    min-height: 52px;
+    padding: 0 24px;
+    margin-bottom: 0;
+    line-height: 52px;
+    border-top-color: rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+}
+
+.md-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    border: none;
+    font-size: 24px;
+    color: #eee;
+    cursor: pointer;
+    z-index: 100;
+    transition: .2s;
+
+    &:hover {
+        color: #48cfad;
+        transform: rotate(360deg);
+    }
+}
+
+.md-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(70, 60, 60, .5);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 99;
+    transition: all .3s;
+    &.show {
+        .modal-show();
+    }
+    &.blank {
+        .modal-blank();
+    }
+}
+
+/** ANIMATIONS */
+
+.md-modal-animation-slide,
+.md-modal-animation-scale,
+.md-modal-animation-fadein,
+.md-modal-animation-stick,
+.md-modal-animation-flip,
+.md-modal-animation-vertical,
+.md-modal-animation-sign,
+.md-modal-animation-bottom {
+    > div {
+        .animation-init();
+    }
+    &.show > div {
+        .modal-show();
+    }
+}
+
+.md-modal-animation-slide {
+    > div {
+        transform: translateY(30%);
+    }
+    &.show > div {
+        transform: translateY(0);
+    }
+}
+
+.md-modal-animation-scale {
+    > div {
+        transform: scale(.4);
+    }
+    &.show > div {
+        transform: scale(1);
+    }
+}
+
+.md-modal-animation-fadein {
+    overflow: hidden;
+    > div {
+        visibility: hidden;
+        opacity: .4;
+    }
+    &.show > div {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.md-modal-animation-stick {
+    top: 0;
+    transform: translateX(-50%);
+    > div {
+        transform: translateY(-200%);
+    }
+    &.show > div {
+        transform: translateY(0%);
+    }
+}
+
+.md-modal-animation-flip {
+    perspective: 1300px;
+    > div {
+        transform-style: preserve-3d;
+        transform: rotateY(-70deg);
+    }
+    &.show > div {
+        transform: rotateY(0deg);
+    }
+}
+
+.md-modal-animation-vertical {
+    perspective: 1300px;
+    > div {
+        transform-style: preserve-3d;
+        transform: rotateX(-70deg);
+    }
+    &.show > div {
+        transform: rotateX(0deg);
+    }
+}
+
+.md-modal-animation-sign {
+    perspective: 1300px;
+    > div {
+        transform-style: preserve-3d;
+        transform: rotateX(-60deg);
+        transform-origin: 50% 0;
+    }
+    &.show > div {
+        transform: rotateX(0deg);
+    }
+}
+
+.md-modal-animation-bottom {
+    perspective: 1300px;
+    > div {
+        transform-style: preserve-3d;
+        transform: translateY(100%) rotateX(90deg);
+        transform-origin: 0 100%;
+    }
+    &.show > div {
+        transform: translateY(0%) rotateX(0deg);
+    }
+}
+
