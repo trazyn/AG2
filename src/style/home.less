@@ -6,13 +6,37 @@
     width: 100%;
     overflow: hidden;
 
-    section {
+    #videojs {
         position: absolute;
-        left: 0;
-        top: 0;
-        height: 100%;
+        left: 50%;
+        top: 55%;
+        width: 60%;
+        height: 45%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    .image-zoom {
         width: 100%;
-        z-index: 1;
+        border: 12px solid #fff;
+        overflow: hidden;
+
+        img {
+            transition: .3s;
+            width: 100%;
+        }
+        &:hover img { transform: scale(1.2) rotate(5deg); }
+    }
+
+    .content-wrapper {
+        background-color: rgba(0,0,0,1);
+
+        &.bg-white {
+            background-color: #fff;
+            color: rgba(0,0,0,.7);
+
+            .submenu-head { color: rgba(0,0,0,.9); }
+        }
+        h3 { color: rgba(0,0,0,.9); }
     }
 
     .background {
@@ -109,37 +133,35 @@
         }
     }
 
-    #videojs {
+    .menus {
+        .out-ref {
+            float: right;
+        }
+    }
+
+    .form-group { margin-bottom: 2.5em; }
+
+    i.icon-wechat + div {
         position: absolute;
-        left: 50%;
-        top: 55%;
-        width: 60%;
-        height: 45%;
-        transform: translateX(-50%) translateY(-50%);
+        bottom: 3em;
+        right: 0;
     }
 
-    .image-zoom {
+    i.icon-wechat:hover {
+        color: @grape;
+
+        & + div {
+            display: block !important;
+        }
+    }
+
+    section {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
         width: 100%;
-        border: 12px solid #fff;
-        overflow: hidden;
-
-        img {
-            transition: .3s;
-            width: 100%;
-        }
-        &:hover img { transform: scale(1.2) rotate(5deg); }
-    }
-
-    .content-wrapper {
-        background-color: rgba(0,0,0,1);
-
-        &.bg-white {
-            background-color: #fff;
-            color: rgba(0,0,0,.7);
-
-            .submenu-head { color: rgba(0,0,0,.9); }
-        }
-        h3 { color: rgba(0,0,0,.9); }
+        z-index: 1;
     }
 
     section {
@@ -207,6 +229,13 @@
         .showcase [class^="col-"] {
             padding: 0;
             margin: 0;
+        }
+
+        small {
+            display: inline-block;
+            font-size: 0.6em;
+            letter-spacing: 6px;
+            transform: translateY(-70%);
         }
 
         a { color: inherit; }
@@ -351,5 +380,22 @@
         }
 
         p { font-size: 12px !important; }
+    }
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0 !important;
+    padding-right: 15px;
+    color: #fff;
+    background: rgba(0,0,0,.9);
+    line-height: 3em;
+    z-index: 99;
+
+    i {
+        margin: 0 .3em;
     }
 }

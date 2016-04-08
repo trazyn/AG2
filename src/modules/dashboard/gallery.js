@@ -33,17 +33,23 @@ function( service ) {
         .find( ".md-dropdown" )
         .dropdown( {
             data: [ {
-                text: "Portrait",
+                text: "Wedding",
                 value: "1"
             }, {
                 text: "Pre-Wedding",
                 value: "2"
             }, {
-                text: "Wedding",
+                text: "Portrait",
                 value: "3"
             }, {
-                text: "Others",
+                text: "Children",
                 value: "4"
+            }, {
+                text: "Fashion",
+                value: "5"
+            }, {
+                text: "Other",
+                value: "6"
             } ],
             nothing: "Choice photography type"
         } );
@@ -55,7 +61,7 @@ function( service ) {
             keyword = ele.find( "#search" ).val(),
             type = dropdown.val()[0],
 
-            category = [ "Portrait", "Pre-Wedding", "Wedding", "Others" ],
+            category = [ "Wedding", "Pre-Wedding", "Portrait", "Children", "Fashion", "Other" ],
 
             html = "";
 

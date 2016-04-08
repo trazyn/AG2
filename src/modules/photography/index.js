@@ -16,10 +16,12 @@ function( service ) {
         totalPage = 1;
 
         type = {
-            "portrait": 1,
+            "wedding": 1,
             "pre-wedding": 2,
-            "wedding": 3,
-            "others": 4
+            "portrait": 3,
+            "children": 4,
+            "Fashion": 5,
+            "others": 6
         }[ type ];
 
         function loadData() {

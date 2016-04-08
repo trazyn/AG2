@@ -168,9 +168,9 @@ function( service, photography ) {
 
             var section = container.find( "section[data-index='video-film']" );
 
-            [ "travel", "wedding", "movie" ].forEach( function( key, i ) {
+            [ "pre-wedding", "wedding", "movie", "commercial", "other" ].forEach( function( key, i ) {
 
-                var item = data[i];
+                var item = data[i] || {};
                 section.find( ".video[data-type='" + key + "']" ).html( item.source );
             } );
         } );

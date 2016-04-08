@@ -48,10 +48,10 @@ function( service, gallery, video, changePassword, pricing, blog, updateAbout, s
 
             var section = container.find( "section[data-index='videoFilm']" );
 
-            [ "travel", "wedding", "movie" ].forEach( function( key, index ) {
+            [ "wedding", "prewedding", "commercial", "movie", "others" ].forEach( function( key, index ) {
 
                 var
-                item = data[index],
+                item = data[index] || {},
                 tab = section.find( ".tab[data-index='" + key + "']" );
 
                 tab.find( "input[name='cover']" ).val( item.cover ).trigger( "focusout" );

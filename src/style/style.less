@@ -77,12 +77,25 @@ header {
     z-index: 99;
 
     .logo {
+        position: relative;
         display: inline-block;
         width: 232px;
         height: 100%;
-        background-image: url(../../images/logo.jpeg);
-        background-position: center;
-        background-repeat: no-repeat;
+        font-size: 1.6em;
+        font-family: STFangsong,STKaiti,SimSun,NSimSun,KaiTi,FangS;
+        background: rgba(255,255,255,.2);
+        color: #fff;
+        text-align: center;
+
+        small {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            transform: translateY(15%);
+            font-size: .7em;
+        }
     }
 
     .menus {
@@ -103,6 +116,7 @@ header {
             transition: .2s;
             &.go-aresguo { margin-left: 60px; }
             &:hover { color: #fff; }
+            &:nth-child(1) { margin-left: 6em; }
         }
 
         a { color: inherit; }

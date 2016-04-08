@@ -236,28 +236,34 @@
 
         <section data-index="videoFilm" class="md-loading md-loading-show">
             <nav>
-                <div class="active" data-index="travel">
-                    Travel MV
+                <div class="active" data-index="wedding">
+                    Wedding
                 </div>
-                <div data-index="wedding">
-                    Wedding Flim
+                <div data-index="prewedding">
+                    Pre-Wedding
+                </div>
+                <div data-index="commercial">
+                    Commercial
                 </div>
                 <div data-index="movie">
                     Micro Movie
                 </div>
+                <div data-index="others">
+                    Other
+                </div>
             </nav>
 
             <div class="tab-content">
-                <div class="tab active" data-index="travel">
+                <div class="tab active" data-index="wedding">
                     <div class="form-horizontal md-validation">
                         <div class="row">
                             <div class="col-md-4">
-                                <p class="text-muted"> Youke embed source </p>
+                                <p class="text-muted"> Youku embed source </p>
                             </div>
                             <div class="col-md-8">
                                 <div class="md-form-group">
-                                    <input class="md-field" id="travelMV-source" name="source" type="text" validators="[ 'required' ]">
-                                    <label class="md-label" for="travelMV-source">Source</label>
+                                    <input class="md-field" id="wedding-source" name="source" type="text" validators="[ 'required' ]">
+                                    <label class="md-label" for="wedding-source">Source</label>
                                     <small> Should not be empty </small>
                                 </div>
                             </div>
@@ -277,16 +283,45 @@
                     </div>
                 </div>
 
-                <div class="tab" data-index="wedding">
+                <div class="tab" data-index="prewedding">
                     <div class="form-horizontal md-validation">
                         <div class="row">
                             <div class="col-md-4">
-                                <p class="text-muted"> Youke embed source </p>
+                                <p class="text-muted"> Youku embed source </p>
                             </div>
                             <div class="col-md-8">
                                 <div class="md-form-group">
-                                    <input class="md-field" id="videoFilm-source" name="source" type="text" validators="[ 'required' ]">
-                                    <label class="md-label" for="videoFilm-source">Source</label>
+                                    <input class="md-field" id="prewedding-source" name="source" type="text" validators="[ 'required' ]">
+                                    <label class="md-label" for="prewedding-source">Source</label>
+                                    <small> Should not be empty </small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <input type="hidden" name="id">
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-4">
+                                <button class="md-btn md-btn-coral" style="margin-bottom: 20px; margin-right: 30px;" name="preview">
+                                    Preview
+                                </button>
+                                <button class="md-btn md-btn-primary" style="margin-bottom: 20px;" name="submit">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab" data-index="commercial">
+                    <div class="form-horizontal md-validation">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <p class="text-muted"> Youku embed source </p>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="md-form-group">
+                                    <input class="md-field" id="commercial-source" name="source" type="text" validators="[ 'required' ]">
+                                    <label class="md-label" for="commercial-source">Source</label>
                                     <small> Should not be empty </small>
                                 </div>
                             </div>
@@ -310,12 +345,12 @@
                     <div class="form-horizontal md-validation">
                         <div class="row">
                             <div class="col-md-4">
-                                <p class="text-muted"> Youke embed source </p>
+                                <p class="text-muted"> Youku embed source </p>
                             </div>
                             <div class="col-md-8">
                                 <div class="md-form-group">
-                                    <input class="md-field" id="microMovie-source" name="source" type="text" validators="[ 'required' ]">
-                                    <label class="md-label" for="microMovie-source">Source</label>
+                                    <input class="md-field" id="movie-source" name="source" type="text" validators="[ 'required' ]">
+                                    <label class="md-label" for="movie-source">Source</label>
                                     <small> Should not be empty </small>
                                 </div>
                             </div>
@@ -334,6 +369,36 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="tab" data-index="others">
+                    <div class="form-horizontal md-validation">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <p class="text-muted"> Youku embed source </p>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="md-form-group">
+                                    <input class="md-field" id="commercial-source" name="source" type="text" validators="[ 'required' ]">
+                                    <label class="md-label" for="commercial-source">Source</label>
+                                    <small> Should not be empty </small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <input type="hidden" name="id">
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-4">
+                                <button class="md-btn md-btn-coral" style="margin-bottom: 20px; margin-right: 30px;" name="preview">
+                                    Preview
+                                </button>
+                                <button class="md-btn md-btn-primary" style="margin-bottom: 20px;" name="submit">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
     </div>
@@ -363,7 +428,7 @@
                         <div class="md-radio">
                             <input value="1" type="radio" name="photoType" checked/>
                             <div></div>
-                        </div>Portrait
+                        </div>Wedding
 
                         <div class="md-radio">
                             <input type="radio" value="2" name="photoType"/>
@@ -373,12 +438,22 @@
                         <div class="md-radio">
                             <input value="3" type="radio" name="photoType"/>
                             <div></div>
-                        </div>Wedding
+                        </div>Portrait
 
                         <div class="md-radio">
                             <input value="4" type="radio" name="photoType"/>
                             <div></div>
-                        </div>Others
+                        </div>Children
+
+                        <div class="md-radio">
+                            <input value="5" type="radio" name="photoType"/>
+                            <div></div>
+                        </div>Fashion
+
+                        <div class="md-radio">
+                            <input value="6" type="radio" name="photoType"/>
+                            <div></div>
+                        </div>Other
                     </div>
                 </div>
 
